@@ -2,13 +2,14 @@ def mapeia(img, m, n, i, j, marcado):
     marcado[i][j] = 1
     if marcado[i+1][j] != 1 and img[i+1][j] == 1 and i+1 < m and j < n:
         mapeia(img, m, n, i+1, j, marcado)
-    elif marcado[i+1][j+1] != 1 and img[i+1][j+1] == 1 and i+1 < m and j+1 < n:
-        mapeia(img, m, n, i+1, j+1, marcado)
     elif marcado[i][j+1] != 1 and img[i][j+1] == 1 and i < m and j+1 < n:
         mapeia(img, m, n, i, j+1, marcado)
+    elif marcado[i+1][j+1] != 1 and img[i+1][j+1] == 1 and i+1 < m and j+1 < n:
+        mapeia(img, m, n, i+1, j+1, marcado)
     elif marcado[i-1][j+1] != 1 and img[i-1][j+1] == 1 and i-1 < m and j+1 < n:
         mapeia(img, m, n, i-1, j+1, marcado)
-    
+    elif marcado[i+1][j-1] != 1 and img[i+1][j-1] == 1 and i+1 < m and j-1 < n:
+        mapeia(img, m, n, i+1, j-1, marcado)
 
 def conta_obj(img, m, n, mark):
     n_obj = 0
