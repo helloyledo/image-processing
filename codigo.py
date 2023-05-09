@@ -59,11 +59,19 @@ def num_holes(objeto,imagem):
                 return True
     return False 
 
-blbla = get_objects_with_holes(image)
-print(blbla)
-print(blbla[0][1])
-print(num_holes(blbla[0][1],image))
+def resultado(imagem):
+  objetos = get_objects_with_holes(imagem)
+  num_obj_with_holes = 0
+  num_obj_wthout_holes = 0
+  for x in objetos[0]:
+    if num_holes(x,imagem):
+      num_obj_with_holes += 1
+    else:
+      num_obj_wthout_holes += 1
+  return objetos[1],num_obj_with_holes, num_obj_wthout_holes
+      
 
+print(resultado(image))
 
 
 
